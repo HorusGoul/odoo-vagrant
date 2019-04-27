@@ -16,7 +16,7 @@ Vagrant Setup for Odoo 10 on Ubuntu 16.04
 - Clone this repo
 
 ```
-git clone https://github.com/danishzahur/odoo-vagrant.git
+git clone https://github.com/HorusGoul/odoo-vagrant.git
 ```
 
 - Start virtual machine
