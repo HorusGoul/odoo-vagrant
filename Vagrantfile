@@ -7,7 +7,7 @@ Vagrant.configure(2) do |config|
   config.vm.network "forwarded_port", guest: 5432, host: 5432, auto_correct: true
   config.vm.synced_folder "src/my_addons", "/home/vagrant/my_addons", create: true
   config.vm.provider "virtualbox" do |vb|
-    vb.name = "odoo-vagrant-test"
+    vb.name = "odoo-vagrant"
     vb.cpus = 2
     vb.memory = "2048"
   end
