@@ -16,9 +16,11 @@ apt-get update
 print_out "Installing odoo..."
 apt-get install odoo -y
 
-print_out "Configuring addons_path"
-cat /etc/odoo/odoo.conf | grep -v addons_path > /etc/odoo/odoo.conf
-echo 'addons_path = /usr/lib/python2.7/dist-packages/odoo/addons,/home/vagrant/my_addons' >> /etc/odoo/odoo.conf
+print_out "Configuring addons_path..."
+cat /etc/odoo/odoo.conf | grep -v addons_path > /etc/odoo/.tmp
+echo 'addons_path = /usr/lib/python2.7/dist-packages/odoo/addons,/home/vagrant/my_addons' >> /etc/odoo/.tmp
+rm /etc/odoo/odoo.conf
+mv /etc/odoo/.tmp /etc/odoo/odoo.conf
 service odoo restart
 
 print_out "Configuring PostgreSQL access..."
